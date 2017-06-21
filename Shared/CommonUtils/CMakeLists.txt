@@ -1,6 +1,6 @@
-cmake_minimum_required (VERSION 2.6) 
+cmake_minimum_required (VERSION 2.6)
 
-project ( CommonUtils ) 
+project ( CommonUtils )
 
 INCLUDE(../../ExocortexCMakeShared.txt  NO_POLICY_SCOPE)
 
@@ -15,7 +15,7 @@ add_library( ${PROJECT_NAME} STATIC ${Sources} ${Includes} )
 TARGET_LINK_LIBRARIES( ${PROJECT_NAME}
    ${ALL_ALEMBIC_LIBS}
    )
-	
+
 ADD_DEPENDENCIES(${PROJECT_NAME} AlembicAbcGeom)
 
 
@@ -23,4 +23,4 @@ SET( DocSource_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../Doc )
 SET( DocInstall_DIR ${Exocortex_INSTALL_BASE_DIR}/Doc )
 
 remove_dir( ${DocInstall_DIR} )
-copy_directory( ${DocSource_DIR} ${DocInstall_DIR} ) 
+install(DIRECTORY ${DocSource_DIR} DESTINATION ${DocInstall_DIR} )
