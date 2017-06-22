@@ -50,8 +50,13 @@ find_package( OpenGL REQUIRED )
 find_package( Alembic REQUIRED )
 find_package( HDF5 REQUIRED COMPONENTS CXX HL C)
 
-link_directories( ${MAYA_LIBRARY_DIR} )
+include_directories(${X11_INCLUDE_DIR})
+include_directories(${ILMBASE_INCLUDE_DIRS} ${ILMBASE_INCLUDE_DIR}/OpenEXR)
+include_directories( ${Boost_INCLUDE_DIRS} )
+include_directories( ${HDF5_INCLUDE_DIRS} )
 
+link_directories( ${Boost_LIBRARY_DIRS} )
+link_directories( ${MAYA_LIBRARY_DIR} )
 
 SET( BUILD_SHARED_LIBS OFF )
 

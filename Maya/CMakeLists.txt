@@ -3,8 +3,6 @@ project ( MayaExocortexAlembic )
 
 set ( COMPILE_NAME MayaExocortexAlembic )
 
-INCLUDE(${CMAKE_CURRENT_SOURCE_DIR}/../ExocortexCMakeShared.txt  NO_POLICY_SCOPE)
-
 add_definitions( -Dcrate_Maya_Version=${Maya_VERSION} )
 
 include_directories( "." )
