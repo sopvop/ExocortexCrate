@@ -422,8 +422,8 @@ Abc::ICompoundProperty getUserProperties(const AbcG::IObject& iObj,
                                          int& nSamples);
 Abc::ICompoundProperty getArbGeomParams(const AbcG::IObject& iObj);
 
-char* getTypeStr(AbcA::PropertyType propType);
-char* getPodStr(AbcA::PlainOldDataType pod);
+const char* getTypeStr(AbcA::PropertyType propType);
+const char* getPodStr(AbcA::PlainOldDataType pod);
 
 void printCompoundProperty(Abc::ICompoundProperty prop);
 void printObjectProperties(AbcG::IObject iObj, int options);

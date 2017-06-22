@@ -342,11 +342,9 @@ typedef BasicProfiler<empty_logging_policy,  // don't log events
 #endif  // _MSC_VER
 
 #ifdef ESS_PROFILING
-#pragma message("EXOCORTEX: ESS_PROFILING defined, profiling enabled.")
 #define ESS_PROFILE_SCOPE(a) Profiler profiler(a);
 #define ESS_PROFILE_REPORT() logging_stats_policy::generateReport();
 #else
-#pragma message("EXOCORTEX: ESS_PROFILING not defined, profiling disabled.")
 #define ESS_PROFILE_SCOPE(a)
 #define ESS_PROFILE_REPORT()
 #endif

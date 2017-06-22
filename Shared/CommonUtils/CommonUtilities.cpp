@@ -1153,14 +1153,14 @@ Abc::ICompoundProperty AbcNodeUtils::getUserProperties(
   }
 }
 
-char* AbcNodeUtils::getTypeStr(AbcA::PropertyType propType)
+const char* AbcNodeUtils::getTypeStr(AbcA::PropertyType propType)
 {
   if (propType == AbcA::kCompoundProperty) return "kCompoundProperty";
   if (propType == AbcA::kScalarProperty) return "kScalarProperty";
   if (propType == AbcA::kArrayProperty) return "kArrayProperty";
 }
 
-char* AbcNodeUtils::getPodStr(AbcA::PlainOldDataType pod)
+const char* AbcNodeUtils::getPodStr(AbcA::PlainOldDataType pod)
 {
   if (pod == AbcA::kBooleanPOD) return "kBooleanPOD";
   if (pod == AbcA::kUint8POD) return "kUint8POD";
