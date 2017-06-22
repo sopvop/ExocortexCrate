@@ -506,7 +506,7 @@ bool validateSceneFileAttached(SceneNodeAlembicPtr fileRoot,
 //}
 
 typedef std::map<std::string, SceneNodeAlembicPtr> NodeMap;
-typedef boost::shared_ptr<NodeMap> NodeMapPtr;
+typedef std::shared_ptr<NodeMap> NodeMapPtr;
 
 NodeMapPtr buildChildMap(SceneNodeAlembicPtr parent)
 {
@@ -870,7 +870,7 @@ void GetSampleRange(SceneNodeAlembicPtr fileRoot, std::size_t& oMinSample,
 }
 
 typedef std::map<std::string, SceneNodeAppPtr> AppNodeMap;
-typedef boost::shared_ptr<AppNodeMap> AppNodeMapPtr;
+typedef std::shared_ptr<AppNodeMap> AppNodeMapPtr;
 
 AppNodeMapPtr buildChildMap(SceneNodeAppPtr parent)
 {

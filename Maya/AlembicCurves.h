@@ -10,7 +10,7 @@
 
 class AlembicCurveAccumulator;
 
-typedef boost::shared_ptr<AlembicCurveAccumulator> AlembicCurveAccumulatorPtr;
+typedef std::shared_ptr<AlembicCurveAccumulator> AlembicCurveAccumulatorPtr;
 
 /**
  * For the case where curves should be merged together. This class handles the

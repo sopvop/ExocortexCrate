@@ -1,7 +1,7 @@
 #ifndef __COMMON_REGEX_H
 #define __COMMON_REGEX_H
 
-#include <boost/shared_ptr.hpp>
+#include <memory>
 #include <string>
 
 namespace SearchReplace {
@@ -11,7 +11,7 @@ class NoReplace  // serve as a base class
   virtual std::string replace(const std::string &str) const;
 };
 
-typedef boost::shared_ptr<NoReplace> ReplacePtr;
+typedef std::shared_ptr<NoReplace> ReplacePtr;
 
 ReplacePtr createReplacer(const std::string *exp = 0,
                           const std::string *form = 0);

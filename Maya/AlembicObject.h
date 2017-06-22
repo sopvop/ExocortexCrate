@@ -6,7 +6,7 @@
 class AlembicWriteJob;
 class AlembicObject;
 
-typedef boost::shared_ptr<AlembicObject> AlembicObjectPtr;
+typedef std::shared_ptr<AlembicObject> AlembicObjectPtr;
 
 class AlembicObject {
  private:

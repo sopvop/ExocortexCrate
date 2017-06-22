@@ -9,7 +9,7 @@
 static inline const MString &PythonBool(bool b);
 
 class AlembicFileAndTimeControl;
-typedef boost::shared_ptr<AlembicFileAndTimeControl>
+typedef std::shared_ptr<AlembicFileAndTimeControl>
     AlembicFileAndTimeControlPtr;
 
 // Will also hold all the informations about the IJobString necessary!

@@ -1,12 +1,12 @@
 #ifndef __COMMON_ABC_CACHE_H__
 #define __COMMON_ABC_CACHE_H__
 
-#include <boost/smart_ptr.hpp>
+#include <memory>
 
 #include "CommonAlembic.h"
 #include "CommonPBar.h"
 
-typedef boost::shared_ptr<AbcG::IXform> IXformPtr;
+typedef std::shared_ptr<AbcG::IXform> IXformPtr;
 
 class AbcObjectCache {
  protected:

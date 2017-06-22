@@ -421,13 +421,7 @@ class SingleValue : public MDataBasePropertyManager<MDoubleArray> {
     if (!prop.valid() || prop.getNumSamples() <= 0) {
       return;
     }
-#ifdef _MSC_VER
-    std::shared_ptr<sam_type> ptr = prop.getValue(floorIndex);
-    boost::shared_ptr<sam_type> samples(ptr.get(), [ptr](sam_type*) mutable {ptr.reset();});
-#else
-    std::tr1::shared_ptr<sam_type> samples = prop.getValue(floorIndex);
-#endif
-
+    std::shared_ptr<sam_type> samples = prop.getValue(floorIndex);
     const size_t sam_size = samples->size();
     if (sam_size == 0 || sam_size != 1 && sam_size != particleCount) {
       return;
@@ -468,12 +462,7 @@ class PairValue : public MDataBasePropertyManager<MVectorArray> {
     if (!prop.valid() || prop.getNumSamples() <= 0) {
       return;
     }
-#ifdef _MSC_VER
-    std::shared_ptr<sam_type> ptr = prop.getValue(floorIndex);
-    boost::shared_ptr<sam_type> samples(ptr.get(), [ptr](sam_type*) mutable {ptr.reset();});
-#else
-    std::tr1::shared_ptr<sam_type> samples = prop.getValue(floorIndex);
-#endif
+    std::shared_ptr<sam_type> samples = prop.getValue(floorIndex);
 
     const size_t sam_size = samples->size();
     if (sam_size == 0 || sam_size != 1 && sam_size != particleCount) {
@@ -516,12 +505,7 @@ class TripleValue : public MDataBasePropertyManager<MVectorArray> {
     if (!prop.valid() || prop.getNumSamples() <= 0) {
       return;
     }
-#ifdef _MSC_VER
-    std::shared_ptr<sam_type> ptr = prop.getValue(floorIndex);
-    boost::shared_ptr<sam_type> samples(ptr.get(), [ptr](sam_type*) mutable {ptr.reset();});
-#else
-    std::tr1::shared_ptr<sam_type> samples = prop.getValue(floorIndex);
-#endif
+    std::shared_ptr<sam_type> samples = prop.getValue(floorIndex);
 
     const size_t sam_size = samples->size();
     if (sam_size == 0 || sam_size != 1 && sam_size != particleCount) {

@@ -74,7 +74,7 @@ class BasePropertyManager {
   virtual void setParticleProperty(MFnParticleSystem &part) = 0;
   virtual void initPerParticle(const MString &partName) = 0;
 };
-typedef boost::shared_ptr<BasePropertyManager> BasePropertyManagerPtr;
+typedef std::shared_ptr<BasePropertyManager> BasePropertyManagerPtr;
 
 class ArbGeomProperties {
  public:

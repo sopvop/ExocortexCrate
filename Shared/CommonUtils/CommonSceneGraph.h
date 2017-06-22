@@ -1,9 +1,9 @@
 #ifndef __COMMON_SCENE_GRAPH_H
 #define __COMMON_SCENE_GRAPH_H
 
-#include <boost/smart_ptr.hpp>
 #include <list>
 #include <map>
+#include <memory>
 #include <string>
 #include "CommonAlembic.h"
 
@@ -12,16 +12,15 @@ class SceneNodeApp;
 class SceneNodeFile;
 class SceneNodeAlembic;
 
-typedef boost::shared_ptr<SceneNode> SceneNodePtr;
-typedef boost::shared_ptr<SceneNodeApp> SceneNodeAppPtr;
-typedef boost::shared_ptr<SceneNodeFile> SceneNodeFilePtr;
-typedef boost::shared_ptr<SceneNodeAlembic> SceneNodeAlembicPtr;
+typedef std::shared_ptr<SceneNode> SceneNodePtr;
+typedef std::shared_ptr<SceneNodeApp> SceneNodeAppPtr;
+typedef std::shared_ptr<SceneNodeFile> SceneNodeFilePtr;
+typedef std::shared_ptr<SceneNodeAlembic> SceneNodeAlembicPtr;
 
 template <class T, class U>
-boost::shared_ptr<U> reinterpret(boost::shared_ptr<T> original)
+std::shared_ptr<U> reinterpret(std::shared_ptr<T> original)
 {
-  return boost::dynamic_pointer_cast<U, T>(original);
-  // return *((boost::shared_ptr<U>*)((void*)&original));
+  return std::dynamic_pointer_cast<U, T>(original);
 }
 
 typedef std::list<SceneNodePtr>::iterator SceneChildIterator;

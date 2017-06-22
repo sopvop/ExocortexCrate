@@ -24,7 +24,7 @@ class SceneNodePolyMeshSubtree : public SceneNode {
   void print() { ESS_LOG_WARNING("SceneNodePolyMeshSubtree"); }
 };
 
-typedef boost::shared_ptr<SceneNodePolyMeshSubtree> SceneNodePolyMeshSubtreePtr;
+typedef std::shared_ptr<SceneNodePolyMeshSubtree> SceneNodePolyMeshSubtreePtr;
 
 SceneNodePolyMeshSubtreePtr findPolyMeshChildren(SceneNodePtr root);
 // adjusts tree node links, but DOES NOT update the transforms, this will be

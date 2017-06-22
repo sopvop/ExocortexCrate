@@ -82,8 +82,6 @@ target_link_libraries(
   ${ALL_ALEMBIC_LIBS}
 )
 
-ADD_DEPENDENCIES(${PROJECT_NAME} AlembicAbcGeom)
-
 SET( Install_DIR ${Exocortex_INSTALL_BASE_DIR}/Maya${Maya_VERSION} )
 
 install(

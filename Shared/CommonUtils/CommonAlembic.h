@@ -9,6 +9,7 @@
 #include <deque>
 #include <list>
 #include <map>
+#include <memory>
 #include <set>
 #include <vector>
 
@@ -37,7 +38,6 @@
 #include <boost/filesystem/path.hpp>
 #include <boost/format.hpp>
 #include <boost/lexical_cast.hpp>
-#include <boost/smart_ptr.hpp>
 #include <boost/thread/mutex.hpp>
 #include <boost/variant.hpp>
 

@@ -368,7 +368,7 @@ MSyntax AlembicProfileBeginCommand::createSyntax()
 }
 
 #ifdef ESS_PROFILING
-std::map<std::string, boost::shared_ptr<Profiler>> nameToProfiler;
+std::map<std::string, std::shared_ptr<Profiler>> nameToProfiler;
 #endif
 
 MStatus AlembicProfileBeginCommand::doIt(const MArgList& args)
@@ -389,8 +389,8 @@ MStatus AlembicProfileBeginCommand::doIt(const MArgList& args)
   std::string strFileName(fileName.asChar());
 
   if (nameToProfiler.find(strFileName) == nameToProfiler.end()) {
-    boost::shared_ptr<Profiler> profiler(new Profiler(strFileName.c_str()));
-    nameToProfiler.insert(std::pair<std::string, boost::shared_ptr<Profiler>>(
+    std::shared_ptr<Profiler> profiler(new Profiler(strFileName.c_str()));
+    nameToProfiler.insert(std::pair<std::string, std::shared_ptr<Profiler>>(
         strFileName, profiler));
   }
   else {
