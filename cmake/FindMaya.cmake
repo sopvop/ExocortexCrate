@@ -199,6 +199,7 @@ endforeach(MAYA_LIB)
 find_program(MAYA_EXECUTABLE
         maya
         maya2016
+        maya2018
     HINTS
         ${MAYA_LOCATION}
         $ENV{MAYA_LOCATION}

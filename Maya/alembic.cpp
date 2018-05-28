@@ -45,12 +45,6 @@ static void deleteAllArchivesCallback(void *clientData)
   deleteAllArchives();
 }
 
-#ifdef _MSC_VER
-#define EC_EXPORT
-#else
-#define EC_EXPORT extern "C"
-#endif
-
 void removeExocortexAlembicNode(MObject &node, void *clientData)
 {
   MFnDependencyNode nodeFn(node);
@@ -71,7 +65,7 @@ void removeExocortexAlembicNode(MObject &node, void *clientData)
   }
 }
 
-EC_EXPORT MStatus initializePlugin(MObject obj)
+MStatus initializePlugin(MObject obj)
 {
   const char *pluginVersion = "1.0";
   MFnPlugin plugin(obj, "ExocortexAlembicMaya", pluginVersion, "Any");
@@ -213,7 +207,7 @@ EC_EXPORT MStatus initializePlugin(MObject obj)
   return status;
 }
 
-EC_EXPORT MStatus uninitializePlugin(MObject obj)
+MStatus uninitializePlugin(MObject obj)
 {
   MFnPlugin plugin(obj);
 
